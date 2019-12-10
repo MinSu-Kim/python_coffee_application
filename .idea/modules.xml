@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../coffee_application/.idea/coffee_application.iml" filepath="$PROJECT_DIR$/../coffee_application/.idea/coffee_application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../python_coffee_application/.idea/python_coffee_application.iml" filepath="$PROJECT_DIR$/../python_coffee_application/.idea/python_coffee_application.iml" />
     </modules>
   </component>
 </project>
