@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QApplication
 
 from dao.product_dao import ProductDao
-from db_connection.connection_pool import ConnectionPool
-from ui.UI_product import ProductUI
+from model.view_product import ProductTableView
+from ui.view_product2 import ProductTableViewFromUI
 
 
 def select_product():
@@ -28,6 +28,10 @@ if __name__ == "__main__":
     # select_product()
 
     app = QApplication([])  # 모든 PyQt5 어플리케이션은 어플리케이션 객체를 생성해야 합
-    ex = ProductUI()
-    ex.product_dao=pdt
+    # ex = ProductUI()
+    # ex.product_dao = pdt
+    # ex2 = ProductTableView()
+    ex2 = ProductTableViewFromUI()
     app.exec_()
+
+
