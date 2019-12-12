@@ -31,7 +31,7 @@ if __name__ == "__main__":
     # ex = ProductUI()
     # ex.product_dao = pdt
     # ex2 = ProductTableView()
-    ex2 = ProductTableViewFromUI()
+    ex2 = ProductTableViewFromUI(pdt)
     app.exec_()
 
 

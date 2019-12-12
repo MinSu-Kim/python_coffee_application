@@ -8,18 +8,15 @@ from model.model_product import ProductTableModel
 
 class ProductTableViewFromUI(QWidget):
 
-    def __init__(self):
+    def __init__(self, product_dao=None):
         super().__init__()
         self.ui = uic.loadUi("ui/product_basic.ui")
+
         # create the view
         self.tableView = self.ui.product_table_view
-
-        self.pdt = ProductDao()
-        self.data = self.pdt.query_with_fetchmany()
+        self.__product_dao = product_dao
         self.header = ['제품 코드', '제품 명']
-
-        self.model = ProductTableModel(self.data, self.header)
-        self.tableView.setModel(self.model)
+        self.reload_data()
 
         # header size
         self.tableView.horizontalHeader().resizeSection(0, 40)
@@ -41,7 +38,7 @@ class ProductTableViewFromUI(QWidget):
 
         # hide vertical header
         hv = self.tableView.verticalHeader()
-        hv.setVisible(True)
+        hv.setVisible(False)
 
         # set horizontal header properties
         hh = self.tableView.horizontalHeader()
@@ -76,7 +73,7 @@ class ProductTableViewFromUI(QWidget):
     def __delete(self):
         deleteIdx = self.tableView.selectedIndexes()[0]
         data = self.data[deleteIdx.row()]
-        self.pdt.delete_product(code=data[0])
+        self.__product_dao.delete_product(code=data[0])
         self.reload_data()
 
     def add_product(self):
@@ -92,7 +89,7 @@ class ProductTableViewFromUI(QWidget):
         self.cancel_product()
 
     def update_item(self, code, name):
-        res = self.pdt.update_product(code=code, name=name)
+        res = self.__product_dao.update_product(code=code, name=name)
         if res:
             self.reload_data()
             self.ui.btn_add.setText("추가")
@@ -101,7 +98,7 @@ class ProductTableViewFromUI(QWidget):
             QMessageBox.information(self, 'Fail!', '{} {} 수정 실패'.format(code, name), QMessageBox.Ok)
 
     def add_item(self, code, name):
-        res = self.pdt.insert_product(code=code, name=name)
+        res = self.__product_dao.insert_product(code=code, name=name)
         if res:
             self.reload_data()
             QMessageBox.information(self, 'Success!', '{} {} 추가 되었습니다.'.format(code, name), QMessageBox.Ok)
@@ -109,8 +106,8 @@ class ProductTableViewFromUI(QWidget):
             QMessageBox.information(self, 'Fail!', '{} {} 추가 실패'.format(code, name), QMessageBox.Ok)
 
     def reload_data(self):
-        self.model = None
-        data = self.pdt.query_with_fetchmany()
+        # self.model = None
+        data = self.__product_dao.query_with_fetchmany()
         self.model = ProductTableModel(data, self.header)
         self.tableView.setModel(self.model)
 
