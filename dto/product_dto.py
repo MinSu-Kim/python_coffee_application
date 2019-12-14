@@ -2,15 +2,15 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
 
 
-class CoffeeProduct(QWidget):
+class ProductDto(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.ui = uic.loadUi("ui/product.ui")
-        # self.ui.show()
+        self.ui = uic.loadUi("ui/product_item.ui")
         layout = QVBoxLayout()
         layout.addWidget(self.ui)
         self.setLayout(layout)
+        
 
     def get_product(self):
         code = self.ui.le_code.text()

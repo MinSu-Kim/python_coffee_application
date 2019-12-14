@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QApplication, QWidget
 class ProductUI():
     def __init__(self):
         super().__init__()
-        self.ui= uic.loadUi("product.ui")
+        self.ui= uic.loadUi("product_item.ui")
         self.ui.show()
 
 

@@ -61,15 +61,14 @@ class ProductDao:
         except Error:
             return False
 
-    def query_with_fetchmany(self, sql="select * from product"):
+    def select_product(self, sql="select * from product", code=None):
         print("\n______ {}() ______".format(inspect.stack()[0][3]))
         try:
             conn = self.connection_pool.get_connection()
             cursor = conn.cursor()
-            cursor.execute(sql)
+            cursor.execute(sql) if code is None else cursor.execute(sql, (code,))
             res = []
-            for row in iter_row(cursor, 5):
-                res.append(row)
+            [res.append(row) for row in iter_row(cursor, 5)]
             return res
         except Error as e:
             print(e)

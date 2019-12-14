@@ -26,7 +26,6 @@ class ProductTableModel(QAbstractTableModel):
 
         return self.data[index.row()][index.column()]
 
-
     def headerData(self, col, orientation, role):
         if orientation == Qt.Horizontal and role == Qt.DisplayRole:
             return QVariant(self.header[col])

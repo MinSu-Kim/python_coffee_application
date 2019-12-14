@@ -1,7 +1,6 @@
-from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QHBoxLayout
 
-from ui.form_product import CoffeeProduct
+from dto.product_dto import ProductDto
 
 
 class ProductUI(QWidget):
@@ -9,7 +8,7 @@ class ProductUI(QWidget):
     def __init__(self):
         super().__init__()
         self.__product_dao = None
-        self.p = CoffeeProduct()
+        self.p = ProductDto()
 
         self.btn_ok = QPushButton("확인")
         self.btn_cancel = QPushButton("취소")
@@ -37,7 +36,7 @@ class ProductUI(QWidget):
         self.p.set_product('', '')
 
     def select_res(self):
-        result = self.__product_dao.query_with_fetchmany()
+        result = self.__product_dao.select_item()
         for row in result:
             print(type(row), row)
 
@@ -49,9 +48,3 @@ class ProductUI(QWidget):
     def product_dao(self, product_dao):
         self.__product_dao = product_dao
         self.select_res()
-
-
-if __name__ == '__main__':
-    app = QApplication([])  # 모든 PyQt5 어플리케이션은 어플리케이션 객체를 생성해야 합
-    ex = ProductUI()
-    app.exec_()

@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bb73c77-a4a3-4b7c-8733-b9ade826ef8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dao/abs_dao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/sale_dao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table_view/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/product_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/product_dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/product_basic.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/product_basic.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/model_product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/view_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/table_view/product_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/UI_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui_item_product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/form_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/dto/product_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/gui_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/gui_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/product.ui" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/view_product2.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/view_product2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,6 +47,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace_python\python_coffee_application\dto" />
+      <recent name="D:\workspace_python\python_coffee_application\model" />
+      <recent name="D:\workspace_python\python_coffee_application\table_view" />
       <recent name="C:\Users\lenovo\PycharmProjects\coffee_setting\conf" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -56,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.gui_basic">
     <configuration name="UI_product" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_coffee_application" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,7 +82,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/UI_product.py" />
+      <option name="SCRIPT_NAME" value="D:\workspace_python\python_coffee_application\ui\ui_item_product.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="gui_basic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python_coffee_application" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/gui_basic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,7 +133,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="sale_dao" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_coffee_application" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -107,32 +141,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ui" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dao" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/main_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="total_product" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="python_coffee_application" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ui" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\workspace_python\python_coffee_application\ui\UI_product.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dao/sale_dao.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gui_basic" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.view_product2" />
         <item itemvalue="Python.UI_product" />
-        <item itemvalue="Python.total_product" />
-        <item itemvalue="Python.main_test" />
+        <item itemvalue="Python.sale_dao" />
+        <item itemvalue="Python.view_product2" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576077336643</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="model_view_ 완료">
+      <created>1576147451349</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576147451349</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

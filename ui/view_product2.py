@@ -73,7 +73,7 @@ class ProductTableViewFromUI(QWidget):
     def __delete(self):
         deleteIdx = self.tableView.selectedIndexes()[0]
         data = self.data[deleteIdx.row()]
-        self.__product_dao.delete_product(code=data[0])
+        self.__product_dao.delete_item(code=data[0])
         self.reload_data()
 
     def add_product(self):
@@ -89,7 +89,7 @@ class ProductTableViewFromUI(QWidget):
         self.cancel_product()
 
     def update_item(self, code, name):
-        res = self.__product_dao.update_product(code=code, name=name)
+        res = self.__product_dao.update_item(code=code, name=name)
         if res:
             self.reload_data()
             self.ui.btn_add.setText("추가")
@@ -98,7 +98,7 @@ class ProductTableViewFromUI(QWidget):
             QMessageBox.information(self, 'Fail!', '{} {} 수정 실패'.format(code, name), QMessageBox.Ok)
 
     def add_item(self, code, name):
-        res = self.__product_dao.insert_product(code=code, name=name)
+        res = self.__product_dao.insert_item(code=code, name=name)
         if res:
             self.reload_data()
             QMessageBox.information(self, 'Success!', '{} {} 추가 되었습니다.'.format(code, name), QMessageBox.Ok)
@@ -107,7 +107,7 @@ class ProductTableViewFromUI(QWidget):
 
     def reload_data(self):
         # self.model = None
-        data = self.__product_dao.query_with_fetchmany()
+        data = self.__product_dao.select_item()
         self.model = ProductTableModel(data, self.header)
         self.tableView.setModel(self.model)
 

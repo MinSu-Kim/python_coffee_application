@@ -14,19 +14,28 @@ class ProductTableView(QWidget):
 
     def init_ui(self):
         # create the view
-        tableView = QTableView()
+        tableView = self.create_table_view()
 
         pdt = ProductDao()
-        data = pdt.query_with_fetchmany("select * from product")
+        data = pdt.select_product("select * from product")
         header = ['제품 코드', '제품 명']
         self.model = ProductTableModel(data, header)
+
         tableView.setModel(self.model)
+
+        layout = QVBoxLayout()
+        layout.addWidget(tableView)
+
+        self.setLayout(layout)
+        self.show()
+
+    def create_table_view(self):
+        tableView = QTableView()
 
         # header size
         tableView.horizontalHeader().resizeSection(0, 20)
         tableView.horizontalHeader().resizeSection(1, 60)
-
-        tableView.horizontalHeader().setStyleSheet('QHeaderView::section{background:#66666666}')  # 배경색을 녹색
+        tableView.horizontalHeader().setStyleSheet('QHeaderView::section{background:#66666666}')  # 배경색을 회색
 
         # Set the alignment to the headers
         tableView.horizontalHeader().setDefaultAlignment(Qt.AlignCenter)
@@ -48,14 +57,8 @@ class ProductTableView(QWidget):
         hh = tableView.horizontalHeader()
         hh.setStretchLastSection(True)
 
-
         # set column width to fit contents
         tableView.resizeColumnsToContents()
         tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-
-        layout = QVBoxLayout()
-        layout.addWidget(tableView)
-
-        self.setLayout(layout)
-        self.show()
+        return tableView
 
