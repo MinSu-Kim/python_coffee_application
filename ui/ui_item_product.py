@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QHBoxLayout
 
 from dto.product_dto import ProductDto
+from table_view.product_table import ProductTableView
 
 
 class ProductUI(QWidget):
@@ -20,7 +21,7 @@ class ProductUI(QWidget):
         vlayout = QVBoxLayout()
         vlayout.addWidget(self.p)
         vlayout.addLayout(hlayout)
-        vlayout.addStretch(1)
+        vlayout.addWidget(ProductTableView())
 
         self.setLayout(vlayout)
         self.show()

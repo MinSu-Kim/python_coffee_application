@@ -2,10 +2,10 @@ from PyQt5.QtCore import QAbstractTableModel, QVariant, Qt
 
 
 class ProductTableModel(QAbstractTableModel):
-    def __init__(self, data=None, header=None):
+    def __init__(self, data=None):
         super().__init__()
         self.data = data or [()]
-        self.header = header
+        self.header = ['제품 코드', '제품 명']
 
     def rowCount(self, parent):
         return len(self.data)
